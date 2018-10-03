@@ -63,11 +63,10 @@ describe(__filename, function () {
     })
       .then(function(res) {
         expect(res.bin).toEqual('mongo');
-        expect(res.args[0]).toEqual('foo'); //db name
-        expect(res.args[1]).toEqual('--eval=var collection="bar";var limit=5;'); //variety args
-        expect(res.args[2]).toEndWith('variety.js'); //library path
-        expect(res.args[3]).toEqual('--host'); //library path
-        expect(res.args[4]).toEqual('localhost'); //library path
+        expect(res.args[0]).toEqual('--eval=db = db.getSiblingDB(\'foo\');var collection="bar";var limit=5;'); //variety args
+        expect(res.args[1]).toEndWith('variety.js'); //library path
+        expect(res.args[2]).toEqual('--host'); //library path
+        expect(res.args[3]).toEqual('localhost'); //library path
         done();
       })
       .catch(done);
@@ -89,15 +88,14 @@ describe(__filename, function () {
     })
       .then(function(res) {
         expect(res.bin).toEqual('mongo');
-        expect(res.args[0]).toEqual('foo'); //db name
-        expect(res.args[1]).toEqual('--eval=var collection="bar";'); //variety args
-        expect(res.args[2]).toEndWith('variety.js'); //library path
-        expect(res.args[3]).toEqual('--username');
-        expect(res.args[4]).toEqual('lorem');
-        expect(res.args[5]).toEqual('--password');
-        expect(res.args[6]).toEqual('ipsum');
-        expect(res.args[7]).toEqual('--authenticationDatabase');
-        expect(res.args[8]).toEqual('my-auth-db');
+        expect(res.args[0]).toEqual('--eval=db = db.getSiblingDB(\'foo\');var collection="bar";'); //variety args
+        expect(res.args[1]).toEndWith('variety.js'); //library path
+        expect(res.args[2]).toEqual('--username');
+        expect(res.args[3]).toEqual('lorem');
+        expect(res.args[4]).toEqual('--password');
+        expect(res.args[5]).toEqual('ipsum');
+        expect(res.args[6]).toEqual('--authenticationDatabase');
+        expect(res.args[7]).toEqual('my-auth-db');
         done();
       })
       .catch(done);
@@ -119,15 +117,14 @@ describe(__filename, function () {
     })
       .then(function(res) {
         expect(res.bin).toEqual('mongo');
-        expect(res.args[0]).toEqual('foo'); //db name
-        expect(res.args[1]).toEqual('--eval=var collection="bar";'); //variety args
-        expect(res.args[2]).toEndWith('variety.js'); //library path
-        expect(res.args[3]).toEqual('-u');
-        expect(res.args[4]).toEqual('lorem');
-        expect(res.args[5]).toEqual('-p');
-        expect(res.args[6]).toEqual('ipsum');
-        expect(res.args[7]).toEqual('--authenticationDatabase');
-        expect(res.args[8]).toEqual('my-auth-db');
+        expect(res.args[0]).toEqual('--eval=db = db.getSiblingDB(\'foo\');var collection="bar";'); //variety args
+        expect(res.args[1]).toEndWith('variety.js'); //library path
+        expect(res.args[2]).toEqual('-u');
+        expect(res.args[3]).toEqual('lorem');
+        expect(res.args[4]).toEqual('-p');
+        expect(res.args[5]).toEqual('ipsum');
+        expect(res.args[6]).toEqual('--authenticationDatabase');
+        expect(res.args[7]).toEqual('my-auth-db');
         done();
       })
       .catch(done);
