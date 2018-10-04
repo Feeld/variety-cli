@@ -22,7 +22,7 @@
     "url": "https://github.com/variety/variety-cli/issues"
   },
   "dependencies": {
-    "child-process-promise": "^2.0.1",
+    "child-process-promise": "adrian-gierakowski/child-process-promise.git#31ea5c392085335708eb8b31abe8aa2d22c32cbe",
     "colors": "^1.1.2",
     "hjson": "^3.1.0",
     "lodash": "^4.6.1",
